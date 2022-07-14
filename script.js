@@ -8,6 +8,15 @@ const calculator = {
 function updateDisplay() {
   document.querySelector('#displayNumber').innerText = calculator.displayNumber;
 }
+
+function deleteLastString() {
+  if(calculator.displayNumber.length > 1 ) {
+    let displayMinusOne = calculator.displayNumber.substring(0,calculator.displayNumber.length-1);
+    calculator.displayNumber = displayMinusOne;
+  } else {
+    calculator.displayNumber = '0';
+  }
+}
  
 function clearCalculator() {
   calculator.displayNumber = '0';
@@ -51,8 +60,14 @@ function performCalculation() {
   let result = 0;
   if (calculator.operator === '+') {
     result = parseInt(calculator.firstNumber) + parseInt(calculator.displayNumber);
-  } else {
+  } else if (calculator.operator === '-') {
     result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber);
+  } else if (calculator.operator === 'x') {
+    result = parseInt(calculator.firstNumber) * parseInt(calculator.displayNumber);
+  } else if (calculator.operator === '/') {
+    result = parseInt(calculator.firstNumber) / parseInt(calculator.displayNumber);
+  } else if (calculator.operator === '%') {
+    result = parseInt(calculator.firstNumber) / 100;
   }
  
   calculator.displayNumber = result;
@@ -67,6 +82,12 @@ for (const button of buttons) {
  
     if (target.classList.contains('clear')) {
       clearCalculator();
+      updateDisplay();
+      return;
+    }
+
+    if (target.classList.contains('delete')) {
+      deleteLastString();
       updateDisplay();
       return;
     }

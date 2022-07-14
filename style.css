@@ -1,9 +1,6 @@
 * {
     box-sizing: border-box;
-}
-
-body {
-    font-family: sans-serif;
+    font-family: cursive;
 }
 
 .container {
@@ -28,8 +25,10 @@ body {
 
     font-size: 15px;
     text-align: center;
-    padding: 30px;
-    border: 1px solid black;
+    padding: 15px;
+    margin: 2px;
+    border: none;
+    border-radius: 20px;
     background-color: #d2d2d2;
     cursor: pointer;
 }
@@ -41,7 +40,9 @@ body {
 .display {
     background-color: #333;
     color: white;
-    border: 1px solid black;
+    border: none;
+
+    border-radius: 20px;
 }
 
 .display h1 {
@@ -58,15 +59,21 @@ body {
     font-weight: bold;
 }
 
-.negative,
+
 .operator,
 .equals {
-    background-color: orange;
+    background-color: #e59226;
+}
+
+.negative,
+.percent,
+.clear {
+    background-color: #ffb347 !important;
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 30px;
     margin-top: 20px;
 }
@@ -78,7 +85,7 @@ body {
 
 table {
     width: 100%;
-    border: 1px solid #000;
+    border: none;
     border-collapse: collapse;
     border-spacing: 0;
 }
@@ -89,7 +96,7 @@ th, td {
 }
 
 th {
-    background-color: orange;
+    background-color: #e59226;
     color: white;
 }
 
